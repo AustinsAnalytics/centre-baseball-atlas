@@ -23,3 +23,7 @@ Independent selected-sample checks matched the UI:
 - Graham Johnson versus Levi Wade: three recorded pitches in one PA, two swings, one usable EV of 98.8 mph; confirmed single.
 
 The verification command is `node --test tests/*.test.mjs` (16 passing tests). GitHub Actions repeats these checks before deploying the same release. No credentials, personal documents or private roster-health notes are part of the publication package.
+
+## Player photo update — October 27, 2026
+
+34 photos cover 24 Centre returners, Davis Peterson from Sewanee, Nate Wiles from Mount St. Mary’s and eight user-supplied players. Every image decoded in the browser; all crops were visually reviewed. Player notebooks, roster cards, search results, comparisons and leaderboard links were checked. Desktop normal/dark modes and a 390 px phone profile were reviewed. Source names are searchable without altering statistical identities. The new asset check verifies identity keys, asset hashes, file signatures, crop bounds and missing-photo coverage. All 17 tests pass. Statistical data remains byte-for-byte identical to the October 26 release.

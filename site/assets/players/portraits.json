@@ -1,0 +1,630 @@
+{
+  "updated": "2026-10-27",
+  "method": "Unaltered image pixels with per-player square head-and-shoulder framing in CSS. User-supplied JPEG metadata headers removed without re-encoding. Faces are not generated or altered. Names matched to official roster records or user-supplied filenames.",
+  "players": {
+    "CEN_COL|Tibe, Harrison": {
+      "name": "Harrison Tibe",
+      "file": "assets/players/harrison-tibe.webp",
+      "width": 225,
+      "height": 300,
+      "crop": [
+        0,
+        0,
+        225
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Harrison Tibe",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9812",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/22Tibe.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "93d46a0ed94232c6931e8a254eb29cd74aaf095ec03d33b0509735436ce728eb"
+    },
+    "CEN_COL|Schira, TJ": {
+      "name": "TJ Schira",
+      "file": "assets/players/tj-schira.webp",
+      "width": 156,
+      "height": 208,
+      "crop": [
+        0,
+        0,
+        156
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "TJ Schira",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9810",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/19Schira.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "92bc6cda89b5c475881a7d889b9c7ee6a837424927ba51810ebdd5b403ca87c5"
+    },
+    "CEN_COL|Porter, Jonah": {
+      "name": "Jonah Porter",
+      "file": "assets/players/jonah-porter.webp",
+      "width": 212,
+      "height": 282,
+      "crop": [
+        0,
+        0,
+        212
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Jonah Porter",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9806",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/06Porter.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "dc3042fc3ca1b5b1d8749183b9a322278de85c568c540ad593fed14c2c632a37"
+    },
+    "CEN_COL|Lohr, Ayden": {
+      "name": "Ayden Lohr",
+      "file": "assets/players/ayden-lohr.webp",
+      "width": 221,
+      "height": 295,
+      "crop": [
+        0,
+        0,
+        221
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Ayden Lohr",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9796",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/10Lohr.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "a95da4fc584692db395c9b5a4b48d5fbfaf371733717690dbc426418a5a4c71e"
+    },
+    "CEN_COL|Nakazawa, Cole": {
+      "name": "Cole Nakazawa",
+      "file": "assets/players/cole-nakazawa.webp",
+      "width": 226,
+      "height": 302,
+      "crop": [
+        0,
+        0,
+        226
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Cole Nakazawa",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9805",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/43Nakazawa.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "20ae846a293bc313887a6679b5b74d1e36c1958935dcd382e6d3ca35218cf996"
+    },
+    "CEN_COL|Cowdrey, Harrison": {
+      "name": "Harrison Cowdrey",
+      "file": "assets/players/harrison-cowdrey.webp",
+      "width": 214,
+      "height": 284,
+      "crop": [
+        0,
+        0,
+        214
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Harrison Cowdrey",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9789",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/29Cowdrey.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "0e49f6b9454c9cc5342819e9e72622b65bf61717aae22e39749f4bca5144becd"
+    },
+    "CEN_COL|Johnson, Graham": {
+      "name": "Graham Johnson",
+      "file": "assets/players/graham-johnson.webp",
+      "width": 214,
+      "height": 286,
+      "crop": [
+        0,
+        0,
+        214
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Graham Johnson",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9795",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/37Johnson.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "eb9d464185471cdc973860a333c103471e9f4af6adcfaf9ca0a770b3b26e769b"
+    },
+    "CEN_COL|Rygalski, Evan": {
+      "name": "Evan Rygalski",
+      "file": "assets/players/evan-rygalski.webp",
+      "width": 214,
+      "height": 286,
+      "crop": [
+        0,
+        0,
+        214
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Evan Rygalski",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9809",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/42Rygalski.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "98b0c71d5b812793d0585b378e1e3a956f7b077db625d6613837af3897e435d3"
+    },
+    "CEN_COL|Craig, Jamison": {
+      "name": "Jamison Craig",
+      "file": "assets/players/jamison-craig.webp",
+      "width": 226,
+      "height": 302,
+      "crop": [
+        0,
+        0,
+        226
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Jamison Craig",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9790",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/16Craig.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "8529d5bd703f2a0b25a24d2876dc941eebd7def6d1625510186ae80e32979b2d"
+    },
+    "CEN_COL|Bergeron, Lawson": {
+      "name": "Lawson Bergeron",
+      "file": "assets/players/lawson-bergeron.webp",
+      "width": 232,
+      "height": 310,
+      "crop": [
+        0,
+        0,
+        232
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Lawson Bergeron",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9785",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/38Bergeron.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "aab6cdaada3e3d332c3f391240838a025cd26a976f46a207507c6a4ca37e993e"
+    },
+    "CEN_COL|Day, Forrest": {
+      "name": "Forrest Day",
+      "file": "assets/players/forrest-day.webp",
+      "width": 200,
+      "height": 266,
+      "crop": [
+        0,
+        0,
+        200
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Forrest Day",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9791",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/07Day.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "70caebeaa8291b49837aeab236779dfe1ec75eb0307821d04a7b2d854d45b46e"
+    },
+    "CEN_COL|Hansen, Aiden": {
+      "name": "Aiden Hansen",
+      "file": "assets/players/aiden-hansen.webp",
+      "width": 238,
+      "height": 318,
+      "crop": [
+        0,
+        0,
+        238
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Aiden Hansen",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9793",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/25Hansen.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "3148fcbfe20a3b7f3837aafaa444c620aca8acbc64460be1363951675933783c"
+    },
+    "CEN_COL|Rone, Isaac": {
+      "name": "Isaac Rone",
+      "file": "assets/players/isaac-rone.webp",
+      "width": 204,
+      "height": 271,
+      "crop": [
+        0,
+        0,
+        204
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Isaac Rone",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9808",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/12Rone.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "29af556f25a7fd5a648106782137c82520482378e2fde8365eae8b9afc45f0fa"
+    },
+    "CEN_COL|Zimmerman, Andrew": {
+      "name": "Andrew Zimmerman",
+      "file": "assets/players/andrew-zimmerman.webp",
+      "width": 190,
+      "height": 254,
+      "crop": [
+        0,
+        0,
+        190
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Andrew Zimmerman",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9819",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/26Zimmerman.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "e1f91c5f1965033435c700d96a00c15847b2f64057e059baaa5bcd26ee7502cb"
+    },
+    "CEN_COL|Vallone, Tristan": {
+      "name": "Tristan Vallone",
+      "file": "assets/players/tristan-vallone.webp",
+      "width": 236,
+      "height": 314,
+      "crop": [
+        0,
+        0,
+        236
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Tristan Vallone",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9813",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/20Vallone.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "e196b7d86c769e9604e51347f4323ca6fd42735219bbf5348560605d23a8200c"
+    },
+    "CEN_COL|Waddle, Carson": {
+      "name": "Carson Waddle",
+      "file": "assets/players/carson-waddle.webp",
+      "width": 191,
+      "height": 256,
+      "crop": [
+        0,
+        0,
+        191
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Carson Waddle",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9814",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/05Waddle.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "4d7d4d1146cb4757cc89a90502d59dacbf54e7f897f566d6899c4985fb163f14"
+    },
+    "CEN_COL|Migal, Cale": {
+      "name": "Cale Migal",
+      "file": "assets/players/cale-migal.webp",
+      "width": 190,
+      "height": 254,
+      "crop": [
+        0,
+        0,
+        190
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Cale Migal",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9802",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/01Migal.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "ff8e9ac6b50cc0116bc58db4b6e1fb95abf24a5c4b3c82afc42147377721fbe6"
+    },
+    "CEN_COL|Carr, Aidan": {
+      "name": "Aidan Carr",
+      "file": "assets/players/aidan-carr.webp",
+      "width": 194,
+      "height": 258,
+      "crop": [
+        0,
+        0,
+        194
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Aidan Carr",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9786",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/30Carr.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "fdc64d72e83ce8cee87020c00b4a78d8f213dc7d6b257f0076b6da737599368a"
+    },
+    "CEN_COL|Taylor, Wes": {
+      "name": "Wes Taylor",
+      "file": "assets/players/wes-taylor.webp",
+      "width": 208,
+      "height": 278,
+      "crop": [
+        0,
+        0,
+        208
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Wesley Taylor",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9811",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/17Taylor.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "7f366bdfb4e759ca646bc7721e28e1486f9bdfe28eff45c2758df48013ea2af6"
+    },
+    "CEN_COL|Lopez, Joel": {
+      "name": "Joel Lopez",
+      "file": "assets/players/joel-lopez.webp",
+      "width": 238,
+      "height": 318,
+      "crop": [
+        0,
+        0,
+        238
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Joel Lopez",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9821",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/28Lopez.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "c2d27ca86f2fd728b7ca8c3f6638192139d9ae162b390cb42cdf6d5620469463"
+    },
+    "CEN_COL|Kosobud, John": {
+      "name": "John Kosobud",
+      "file": "assets/players/john-kosobud.webp",
+      "width": 194,
+      "height": 258,
+      "crop": [
+        0,
+        0,
+        194
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "John Kosobud",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9824",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/44Kosobud.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "ee46e26eb31c284617febe93f74c8b71b9d1c24e67c40022a8ef7ce3023b37d6"
+    },
+    "CEN_COL|Asher, Nolan": {
+      "name": "Nolan Asher",
+      "file": "assets/players/nolan-asher.webp",
+      "width": 218,
+      "height": 290,
+      "crop": [
+        0,
+        0,
+        218
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Nolan Asher",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9826",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/46Asher.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "83adf012179bbdeb6cf8991c49bf553b4e5c519c121e3d55e3dd7307c3feafa9"
+    },
+    "CEN_COL|Slechter, Logan": {
+      "name": "Logan Slechter",
+      "file": "assets/players/logan-slechter.webp",
+      "width": 224,
+      "height": 297,
+      "crop": [
+        0,
+        0,
+        224
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Logan Slechter",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9822",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/31Slechter.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "3c38cc11ff3c4f44953e8449dac003154abe6be0a2131f1d216d35b0e790e8ae"
+    },
+    "CEN_COL|Severson, Tommy": {
+      "name": "Tommy Severson",
+      "file": "assets/players/tommy-severson.webp",
+      "width": 208,
+      "height": 278,
+      "crop": [
+        0,
+        0,
+        208
+      ],
+      "credit": "Centre College Athletics",
+      "sourceName": "Tommy Severson",
+      "sourcePage": "https://centrecolonels.com/roster.aspx?rp_id=9825",
+      "sourceImage": "https://centrecolonels.com/images/2026/1/31/39Severson.jpg",
+      "sourceType": "centre",
+      "season": "2026",
+      "sha256": "4662eac8254df510dfea3f0e6f599ff4763bcbcf2ea2ddb3453937415a3eb38d"
+    },
+    "CEN_COL|Wiles, Nate": {
+      "name": "Nate Wiles",
+      "file": "assets/players/nate-wiles.webp",
+      "width": 732,
+      "height": 1098,
+      "crop": [
+        0,
+        30,
+        732
+      ],
+      "credit": "Mount St. Mary’s Athletics",
+      "sourceName": "Nate Wiles",
+      "sourcePage": "https://mountathletics.com/roster.aspx?rp_id=10291",
+      "sourceImage": "https://mountathletics.com/images/2026/1/14/DSC04396.jpg",
+      "sourceType": "mount",
+      "season": "2026",
+      "sha256": "c755e9738c7ffad755ad28cc9a57f7f65e41eb4572fd5f267aa33962dda338d4"
+    },
+    "CEN_COL|Kowski, Nolan": {
+      "name": "Nolan Kowski",
+      "file": "assets/players/nolan-kowski.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        70,
+        25,
+        360
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Nolan Kowski",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "2e013d9a0304d7aac808c9ac94e73464efa5d588760cc39ac60eed445ed1f925",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Petersen, Davis": {
+      "name": "Davis Petersen",
+      "file": "assets/players/davis-petersen.webp",
+      "width": 1207,
+      "height": 1811,
+      "crop": [
+        80,
+        90,
+        1040
+      ],
+      "credit": "Sewanee Athletics",
+      "sourceName": "Davis Peterson",
+      "sourcePage": "https://sewaneetigers.com/roster.aspx?rp_id=10186",
+      "sourceImage": "https://sewaneetigers.com/images/2026/1/30/Headshots_25_Peterson.jpg",
+      "sourceType": "sewanee",
+      "season": "2026",
+      "sha256": "e672553a5fa773b98e7cf225678832860acf0a7f7855ced9b646f0a4cb46c63f"
+    },
+    "CEN_COL|Miller, Drew": {
+      "name": "Drew Miller",
+      "file": "assets/players/drew-miller.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        75,
+        12,
+        350
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Drew Miller",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "9d2b54b1405a98859fd189ef1efc097d9ca534d512cbf0a9142231e9eb459cc5",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Roma, Luc": {
+      "name": "Luc Roma",
+      "file": "assets/players/luc-roma.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        60,
+        0,
+        370
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Luc Roma",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "f268fd39d738611c4d0215d15acd4958d2045c3bb41ce688b848093531936965",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Mastin, Isaac": {
+      "name": "Isaac Mastin",
+      "file": "assets/players/isaac-mastin.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        75,
+        115,
+        350
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Isaac Mastin",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "4e907d35488e4dece722ac7cb29fcf8c0762d65e4a531ab8bff27d721e6cd11b",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Harvey, Jon": {
+      "name": "Jon Harvey",
+      "file": "assets/players/jon-harvey.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        65,
+        25,
+        365
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Jon Harvey",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "7d4eb5b4ecd31c641d8eea3e77a113b1ba2bac1e6638f62097933668c91231ca",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Driscoll, Lucas": {
+      "name": "Lucas Driscoll",
+      "file": "assets/players/lucas-driscoll.jpg",
+      "width": 200,
+      "height": 200,
+      "crop": [
+        0,
+        0,
+        200
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Lucas Driscoll",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "66552e98a5576ee1318f4534a94842e92a859290036bcc89c00fd437991e4e02",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Thrasher, Caleb": {
+      "name": "Caleb Thrasher",
+      "file": "assets/players/caleb-thrasher.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        70,
+        65,
+        360
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Caleb Thrasher",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "c9791dee833ba78b0fa6f0d65ab46323a9da56ec0aa3071bf4ad7b4a66552f15",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    },
+    "CEN_COL|Stout, Camden": {
+      "name": "Camden Stout",
+      "file": "assets/players/camden-stout.jpg",
+      "width": 500,
+      "height": 720,
+      "crop": [
+        60,
+        0,
+        380
+      ],
+      "credit": "User-supplied photo",
+      "sourceName": "Camden Stout",
+      "sourcePage": null,
+      "sourceImage": null,
+      "sourceType": "user",
+      "season": null,
+      "sha256": "748d0ae26274dab7284fbbd2c6323be94a78d2584f24bf487f45180bd1644d9c",
+      "metadata": "EXIF, XMP, IPTC and comment headers absent; decoded image pixels unchanged."
+    }
+  },
+  "missingCurrent": [
+    "Mason Dugan",
+    "Cooper Burgin"
+  ]
+}

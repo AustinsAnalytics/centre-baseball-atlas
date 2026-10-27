@@ -18,3 +18,5 @@
 8. Commit source code, documentation, tests, and `site/data/*.json.gz`. The workflow expands JSON, verifies the release and publishes to Pages. Do not commit the full ColonelsProject folder or private personal/roster-health files.
 
 For an entirely new season, extend the season registry, source ingestion and tests deliberately; the existing seven-season list is explicit. No background upload or cloud service automatically reads your computer.
+
+To add or replace a headshot without changing statistics, follow [PHOTOS.md](PHOTOS.md). Photo identity mappings and framing are maintained separately from the analytics pipeline.

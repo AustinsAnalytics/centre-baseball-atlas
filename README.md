@@ -6,6 +6,7 @@ A static, searchable field guide built from the supplied ColonelsProject basebal
 
 - Warm ivory / forest / gold palette and persistent top-right dark mode.
 - Player notebooks with season histories and session logs; side-by-side comparisons.
+- Headshots across player notebooks, cards, search, comparisons and leaderboards, with source credits and individual head-and-shoulder framing. See [photo sources and maintenance](docs/PHOTOS.md).
 - Pitch lab with selectable measurement axes, location maps, arsenal details and pitch inspection.
 - Game Room with exact-count, inning, outs, runner/score and outcome filters; searchable pitch ledger, complete recorded PA sequences and direct pitch links.
 - Hitting outcomes, decision splits, confidence-gated contact and spray maps.
