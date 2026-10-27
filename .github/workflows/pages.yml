@@ -1,0 +1,45 @@
+name: Verify and publish Centre Atlas
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Expand static data
+        run: |
+          python3 - <<'PY'
+          import gzip
+          from pathlib import Path
+          for p in Path('site/data').glob('*.json.gz'):
+              p.with_suffix('').write_bytes(gzip.decompress(p.read_bytes()))
+          PY
+      - name: Check code and data contracts
+        run: |
+          node --check site/app.js
+          node --check site/charts.js
+          node --check site/room.js
+          node --check site/metrics.js
+          node --test tests/*.test.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v4
