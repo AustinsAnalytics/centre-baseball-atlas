@@ -36,6 +36,9 @@ jobs:
           node --check site/room.js
           node --check site/metrics.js
           node --check site/portraits.js
+          node --check site/studio-metrics.js
+          node --check site/studio.js
+          node --check site/query.js
           node --test tests/*.test.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

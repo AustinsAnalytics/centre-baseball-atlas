@@ -27,3 +27,7 @@ The verification command is `node --test tests/*.test.mjs` (16 passing tests). G
 ## Player photo update — October 27, 2026
 
 34 photos cover 24 Centre returners, Davis Peterson from Sewanee, Nate Wiles from Mount St. Mary’s and eight user-supplied players. Every image decoded in the browser; all crops were visually reviewed. Player notebooks, roster cards, search results, comparisons and leaderboard links were checked. Desktop normal/dark modes and a 390 px phone profile were reviewed. Source names are searchable without altering statistical identities. The new asset check verifies identity keys, asset hashes, file signatures, crop bounds and missing-photo coverage. All 17 tests pass. Statistical data remains byte-for-byte identical to the October 26 release.
+
+## Analysis Studio update — October 27, 2026
+
+Four new modes connect count and location cells, consecutive pitch pairs, EV/LA neighborhoods and matched-player season changes to the underlying records. Nine added analytical tests verify independent season-level pair totals, rejected count/order/pitcher boundaries, missing measurement handling, catcher-view orientation, contact partitions and inclusive thresholds, measurement-specific comparison denominators, and query interpretation. All 26 checks pass. No statistical data or photo assets changed. Browser QA covers the new modes, count/cell/pair/bin filters, sequence inspector, both themes, shared views, query-to-filter navigation, and phone-width layouts.

@@ -9,6 +9,8 @@ A static, searchable field guide built from the supplied ColonelsProject basebal
 - Headshots across player notebooks, cards, search, comparisons and leaderboards, with source credits and individual head-and-shoulder framing. See [photo sources and maintenance](docs/PHOTOS.md).
 - Pitch lab with selectable measurement axes, location maps, arsenal details and pitch inspection.
 - Game Room with exact-count, inning, outs, runner/score and outcome filters; searchable pitch ledger, complete recorded PA sequences and direct pitch links.
+- [Analysis Studio](docs/ANALYSIS_STUDIO.md) with count-to-location drilldowns, valid consecutive-pitch matrices, measured contact neighborhoods, and matched-player development comparisons.
+- Baseball-query search with visible filter interpretation, shareable studies, selected-sample exports, and evidence-based questions in player notebooks.
 - Hitting outcomes, decision splits, confidence-gated contact and spray maps.
 - Starting-position evidence, reconstructed fielding credits and target-specific catcher throws.
 - Replay room with observed starts and bounded ball-flight fits, including clearly inferred catches.
