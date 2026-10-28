@@ -6,8 +6,8 @@ import{studioDefaults,studioPitchMatch}from'../site/studio-metrics.js';
 import{interpretQuery}from'../site/query.js';
 const dir=new URL('../site/data/',import.meta.url),read=n=>JSON.parse(fs.readFileSync(new URL(n,dir),'utf8')),I=read('index.json'),seasons=I.seasons.map(s=>({s,p:unpack(read(s.toLowerCase().replace(' ','-')+'.json').pitches)})),fall=seasons.at(-1).p,all=seasons.flatMap(s=>s.p),centre=p=>I.players[p.p].centre;
 test('consecutive-pitch counts independently reconcile across all seven seasons',()=>{
- assert.deepEqual(seasons.map(s=>consecutivePairs(s.p).pairs.length),[1420,6710,2724,6533,2179,8289,1107]);
- assert.deepEqual(seasons.map(s=>consecutivePairs(s.p,centre).pairs.length),[1420,3909,2724,3700,1993,4030,886]);
+ assert.deepEqual(seasons.map(s=>consecutivePairs(s.p).pairs.length),[1420,6725,2725,6538,2181,8294,1107]);
+ assert.deepEqual(seasons.map(s=>consecutivePairs(s.p,centre).pairs.length),[1420,3922,2725,3702,1995,4030,886]);
  const s=pairSummary(consecutivePairs(fall,centre).pairs);assert.deepEqual([s.n,s.swings,s.whiffs],[886,337,90]);
 });
 test('second-pitch filtering preserves the previous type and real sequence boundaries',()=>{
@@ -40,7 +40,7 @@ test('contact cells partition all usable pairs once and honor inclusive hard-air
 test('matched development compares consistent pitch types and measurement-specific sample sizes',()=>{
  const a=seasons.find(s=>s.s==='Fall 2025').p.filter(p=>I.games[p.g].kind==='Fall Intrasquad'&&p.t==='Fastball'&&centre(p)),b=fall.filter(p=>I.games[p.g].kind==='Fall Intrasquad'&&p.t==='Fastball'&&centre(p));
  const changes=matchedChange(a,b,{metric:'v',min:10}),id=I.players.find(p=>p.name==='Kosobud, John'&&p.centre).id,k=changes.find(p=>p.id===id);assert.deepEqual([k.before.n,k.after.n],[70,42]);assert.ok(Math.abs(k.delta-1.9284447619047569)<.00001);
- const asher=I.players.find(p=>p.name==='Asher, Nolan'&&p.centre).id;assert.equal(a.filter(p=>p.p===asher).length,83);assert.equal(changeValue(a.filter(p=>p.p===asher),'v').n,82);
+ const asher=I.players.find(p=>p.name==='Asher, Nolan'&&p.centre).id;assert.equal(a.filter(p=>p.p===asher).length,84);assert.equal(changeValue(a.filter(p=>p.p===asher),'v').n,83);
  assert.equal(matchedChange(a,b,{metric:'v',min:10000}).length,0);
 });
 test('baseball queries expose the actual applied filters without fabricating an answer',()=>{

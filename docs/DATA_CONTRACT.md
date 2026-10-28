@@ -1,6 +1,6 @@
 # Unified Centre app: independently checked data contract
 
-Read-only inspection, October 26, 2026. No project data or pipelines were modified or executed. Counts below were recomputed from complete saved CSVs with pandas. All paths below are relative to `ColonelsProject`.
+Initial read-only source inspection: October 26, 2026. The source counts remain valid after the October 27 identity/type overlay; original project exports remain unchanged. Counts below were recomputed from complete saved CSVs with pandas. All paths below are relative to `ColonelsProject`.
 
 ## Authoritative inputs and keys
 
@@ -83,6 +83,6 @@ Maintain source metadata, source cutoffs, eligible/excluded counts, model flags,
 
 Historical matched PBP provides 27,029 pitch snapshots; another 214 are estimates. Bases and scores are PA-start snapshots, not live pitch state. The runner and score controls require matched context by default, with an explicit estimated-context option. Unknown context never passes empty-base, zero-out or tied-score criteria. Positive score difference is the pitching team's lead; the hitting lens reverses it. Fall 2026 provides recorded outs, count and inning but no runner or score snapshots.
 
-Pitch-situation rates use pitches only, with their own swing, known-call and usable-measurement denominators. The page does not attach full-game PBP batting results to a pitch subset. Sequences group by logical game and PA key, use PitchOfGame order (which survives a suspended-game PitchNo restart), and retain every row's pitcher. There are 39 historical PAs with a pitching change. PA-start state may diverge after mid-PA events; event descriptions are shown when supplied.
+Pitch-situation rates use pitches only, with their own swing, known-call and usable-measurement denominators. The page does not attach full-game PBP batting results to a pitch subset. Sequences group by logical game and PA key, use PitchOfGame order (which survives a suspended-game PitchNo restart), and retain every row's pitcher. After the October 27 identity audit, 11 historical PAs retain multiple recorded pitchers; stale-name artifacts in the previous 39-PA count are corrected. See [PITCH_AUDIT.md](PITCH_AUDIT.md) for identity overlays and unresolved source conflicts. PA-start state may diverge after mid-PA events; event descriptions are shown when supplied.
 
 Count checks describe discontinuities without guessing corrections. No pitch tempo is calculated from date-only PitchTime. Reconciled scoring remains separate from raw operator results, including the Fall Graham Johnson Sacrifice→Single correction. Four historical InPlay records resolving to strikeouts are explicitly flagged as source conflicts.

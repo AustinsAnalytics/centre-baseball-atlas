@@ -31,3 +31,13 @@ The verification command is `node --test tests/*.test.mjs` (16 passing tests). G
 ## Analysis Studio update — October 27, 2026
 
 Four new modes connect count and location cells, consecutive pitch pairs, EV/LA neighborhoods and matched-player season changes to the underlying records. Nine added analytical tests verify independent season-level pair totals, rejected count/order/pitcher boundaries, missing measurement handling, catcher-view orientation, contact partitions and inclusive thresholds, measurement-specific comparison denominators, and query interpretation. All 26 checks pass. No statistical data or photo assets changed. Browser QA covers the new modes, count/cell/pair/bin filters, sequence inspector, both themes, shared views, query-to-filter navigation, and phone-width layouts.
+
+## Seven-season identity and pitch-type audit — October 27, 2026
+
+All 40,126 source records received a screening disposition; all 40,123 eligible pitches remain in the app. The review applies 801 named-pitcher reassignments (606 official-supported and 195 inferred), marks 15 pitches unidentified, and adds 321 type decisions. Historical type changes total 348; the 82 eligible Fall corrections remain intact. Cowdrey has no reviewed Slider labels and three Unclassified pitches. See [PITCH_AUDIT.md](PITCH_AUDIT.md) for evidence and unresolved cases.
+
+All 33 automated tests pass. Seven new audit checks cover Cowdrey's distinct outings, unknown identity retention, real mid-PA substitutions, physical evidence that rejects the nearest model candidate, source conflicts, stable player IDs, and complete overlay coverage. Pair counts were independently recomputed: 28,990 overall and 18,680 with Centre pitching.
+
+Independent before/after checks confirm unchanged source hashes; unchanged eligibility, pitch order, batting/scoring/context and measured contact/location values; byte-identical PBP pools, replay and defense data; and stable original player IDs/names and all 34 photos. Only reviewed pitcher/type fields and identity-derived handedness, player aggregates and sequence pairs change.
+
+Browser QA: searchable audit records, combined identity/type evidence in the inspector, official-source links, the full searchable report, normal/dark themes, desktop and 390 px layouts. No JavaScript warnings or errors were observed. The portable website includes the compressed complete-pitch ledger; private investigation caches and baseline files are excluded from packaging.

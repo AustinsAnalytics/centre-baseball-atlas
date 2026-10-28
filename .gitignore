@@ -5,3 +5,4 @@ site/data/*.json
 site/.qa/
 *.zip
 upload-manifest.json
+audit_2026_10_27/

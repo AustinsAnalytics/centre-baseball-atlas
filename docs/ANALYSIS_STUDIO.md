@@ -1,6 +1,6 @@
 # Analysis Studio
 
-The October 27 update adds four linked analytical tools over the existing verified data. It does not change pitch labels, scoring, raw measurements or historical coverage.
+The Analysis Studio adds four linked analytical tools over the reviewed data. The separate [October 27 pitch audit](PITCH_AUDIT.md) updates identity and type labels; scoring, raw measurements and historical coverage remain unchanged. Pair fixtures below reflect the corrected identities.
 
 ## Count and location
 
@@ -16,7 +16,7 @@ Exact count, selected location cell and handedness survive the count-map → pai
 
 Speed change is mean(next velocity − previous velocity), in mph. Release and plate gaps are mean pairwise Euclidean distances in their two-dimensional coordinate spaces, converted from feet to inches. Both measurements must be finite; plate gaps also require both usable-location flags. These are descriptive relationships, not a validated tunnel score or a causal measure of deception. Count, hitter, pitcher, pitch mix and location remain intertwined.
 
-Independently reconciled fixtures: 28,962 valid pairs across all seven seasons; 18,662 with Centre pitching. Fall 2026 has 886 Centre pairs, 337 second-pitch swings and 90 misses. Fastball→Slider is 97 pairs / 37 swings / 16 misses. Cowdrey Fastball→Curveball has 10 pairs but only nine usable velocity pairs; nulls never become zero velocity.
+Independently reconciled fixtures: 28,990 valid pairs across all seven seasons; 18,680 with Centre pitching. Fall 2026 has 886 Centre pairs, 337 second-pitch swings and 90 misses. Fastball→Slider is 97 pairs / 37 swings / 16 misses. Cowdrey Fastball→Curveball has 10 pairs but only nine usable velocity pairs; nulls never become zero velocity.
 
 ## Contact lab
 

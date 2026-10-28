@@ -57,7 +57,26 @@ for uid,r in screen.iterrows():
  entry={'uid':uid,'original':r.CurrentType,'candidate':r.Alternative,'applied':strong,'reason':reason,'margin':n(r.DistanceMargin),'distance':n(r.AlternativeDistance),'support':int(r.AlternativeSupport),'screen':r.Screen,'pitcher':name(r.Pitcher),'season':r.Season,'date':r.GameDate,'no':int(r.PitchNo)}
  flags[uid]=entry
  if strong:corrections[uid]=r.Alternative
-players=[];playerids={}
+# Exact-UID, evidence-bearing review overlay. Never rewrites a source export.
+review_overlay=json.loads((ROOT/'pipeline/pitch_review_overlay.json').read_text())
+review_events=json.loads((ROOT/'pipeline/pitch_review_events.json').read_text())
+review_summary=json.loads((ROOT/'pipeline/pitch_review_summary.json').read_text())
+identity_changes={};type_changes={};h['PreviousAtlasPitcher']=h.Pitcher;h['PitcherId']=h.PitcherId.astype(object)
+uid_index={uid:i for i,uid in enumerate(h.PitchUID)}
+for e in review_overlay:
+ assert e['uid'] in uid_index,('Unknown historical review UID',e['uid'])
+ ix=uid_index[e['uid']]
+ if e['field']=='pitcher':
+  assert name(h.at[ix,'Pitcher'])==e['before'],e
+  h.at[ix,'Pitcher']=e['after'];h.at[ix,'PitcherThrows']=e['hand'];h.at[ix,'PitcherId']=e['pitcherId'];identity_changes[e['uid']]=e
+ else:
+  assert corrections.get(e['uid'],h.at[ix,'PitchType'])==e['before'],e
+  corrections[e['uid']]=e['after'];type_changes[e['uid']]=e
+for file in ['pitch_review_overlay.json','pitch_review_events.json','player_registry.json','pitch_review_summary.json']:
+ p=ROOT/'pipeline'/file;manifest.append({'file':str(p.relative_to(SRC)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()})
+# Keep published player links and portrait mappings stable when identities change.
+players=[{**p,'seasons':[],'pitching':0,'hitting':0,'fielding':0} for p in json.loads((ROOT/'pipeline/player_registry.json').read_text())]
+playerids={(p['name'],p['team']):p['id'] for p in players}
 def player(nm,team):
  nm=name(nm);team=team or 'Unknown';key=(nm,team)
  if key not in playerids:
@@ -84,6 +103,8 @@ for r in h.to_dict('records'):
  resolved=s(r['PA_Result']) if yes(r['IsPA']) and s(r['PA_Result']) not in ('','Incomplete','Unknown') else s(r['PlayResult'])
  pr={'u':uid,'g':gid,'p':pi,'b':bi,'c':ci,'t':t,'ot':r['TaggedPitchType'],'baseType':r['PitchType'],'no':int(r['PitchNo']),'inn':r['Inning'],'half':s(r['TopBottom']),'hand':hand,'bats':s(r['BatterSide']),'v':n(r['RelSpeed']),'ivb':n(r['InducedVertBreak']),'hb':rawhb,'ahb':(-rawhb if hand.startswith('L') else rawhb) if rawhb is not None else None,'spin':n(r['SpinRate']),'rh':n(r['RelHeight']),'rs':n(r['RelSide']),'ext':n(r['Extension']),'vaa':n(r['VertApprAngle']),'px':n(r['PlateLocSide']),'pz':n(r['PlateLocHeight']),'loc':loc,'ev':n(r['ExitSpeed']) if ev else None,'la':n(r['Angle']) if ev else None,'dir':n(r['Direction']) if ev else None,'dist':n(r['Distance']) if landing else None,'bearing':n(r['Bearing']) if landing else None,'call':s(r['PitchCall']),'result':resolved,'rawResult':s(r['PlayResult']),'hit':s(r['TaggedHitType']),'balls':n(r['Balls']),'strikes':n(r['Strikes']),'pa':f'H{gid}-{int(r["PAofGame"])}' if n(r['PAofGame']) is not None else None,'review':2 if uid in corrections else 1 if uid in flags else 0,'lc':s(r['PitchLocationConfidence']),'hc':s(r['HitLaunchConfidence']),'rc':s(r['PitchReleaseConfidence']),'outs':n(r['Outs']) if n(r['Outs']) in (0,1,2) else None,'base':int(r['On1B'])+2*int(r['On2B'])+4*int(r['On3B']) if n(r['On1B']) is not None else None,'score':n(r['ScoreDiff_Pitching']),'context':'matched' if r['ContextSource']=='Matched' else 'estimated' if str(r['ContextSource']).startswith('Estimated') else 'trackman','mid':s(r['MidPA_Events']),'seqno':n(r['PitchofPA']),'order':n(r['PitchOfGame']),'recording':s(r['GameUID'])}
  P[season].append(pr)
+ pr['op']=player(r['PreviousAtlasPitcher'],team) if uid in identity_changes else pi
+ pr['identity']=identity_changes[uid]['status'] if uid in identity_changes else 'retained'
  if yes(r['IsPA']):
   event=s(r['PA_Result']);uncertain=event=='Sacrifice' and r['TaggedHitType']!='FlyBall'
   if event=='Sacrifice' and r['TaggedHitType']=='FlyBall':event='SacFly'
@@ -106,6 +127,7 @@ for p in fall['pitches']:
  fr=fall_lookup[p['uid']];season='Fall 2026';pi=player(p['pitcher'],p['pitcherTeam']);bi=player(p['batter'],p['batterTeam']);ci=player(p['catcher'],p['pitcherTeam']) if p.get('catcher') else None
  pr={'u':p['uid'],'g':fg[p['session']],'p':pi,'b':bi,'c':ci,'t':p['type'].replace('ChangeUp','Changeup'),'ot':p['original'],'baseType':p['original'].replace('ChangeUp','Changeup'),'no':p['no'],'inn':p['inning'],'half':p['half'],'hand':p['hand'],'bats':p['bats'],'v':p['v'],'ivb':p['ivb'],'hb':-p['hb'] if p['hand'].startswith('L') and p['hb'] is not None else p['hb'],'ahb':p['hb'],'spin':p['spin'],'rh':p['rh'],'rs':p['rs'],'ext':p['ext'],'vaa':n(fr.get('VertApprAngle')),'px':p['px'],'pz':p['pz'],'loc':p['loc'],'ev':p['ev'],'la':p['la'],'dir':p['direction'] if p['ev'] is not None else None,'dist':p['distance'] if p['landing'] else None,'bearing':p['bearing'] if p['landing'] else None,'call':p['call'],'result':p['result'],'rawResult':s(fr.get('Raw_PlayResult')) or s(fr.get('PlayResult')) or p['result'],'hit':p['hitType'],'balls':p['balls'],'strikes':p['strikes'],'pa':'F'+str(p['pa']),'review':3,'lc':'Reviewed usable' if p['loc'] else 'Unavailable','hc':p['launchConfidence'],'rc':s(fr.get('PitchReleaseConfidence')),'outs':n(fr.get('Outs')) if n(fr.get('Outs')) in (0,1,2) else None,'base':None,'score':None,'context':'trackman','mid':'','seqno':n(fr.get('PitchofPA')),'order':p['no'],'recording':s(fr.get('GameUID'))}
  P[season].append(pr)
+ pr['op']=pi;pr['identity']='reviewed-fall'
  fielders={}
  for pos,f in p.get('fielders',{}).items():
   if n(f['x']) is None or n(f['y']) is None:continue
@@ -161,15 +183,27 @@ for season in seasons:
 positionSummary=[]
 for (season,pi,pos),xy in positions.items():
  a=np.array(xy);positionSummary.append({'season':season,'p':pi,'pos':pos,'n':len(a),'x':float(np.median(a[:,0])),'y':float(np.median(a[:,1])),'depth':float(np.median(np.linalg.norm(a,axis=1))) });players[pi]['fielding']+=len(a)
-audit=list(flags.values())
+audit=[{**r,'kind':'type','status':'legacy-shape-inference' if r['applied'] else 'retained-candidate'} for r in flags.values()]
 for a in fall['audit']:
  audit.append({'uid':a['uid'],'original':a['original'],'candidate':a['clean'],'applied':a['original']!=a['clean'],'reason':a['reason'],'margin':a.get('margin'),'distance':a.get('distance'),'support':None,'screen':'Reviewed Fall 2026 · '+a['status'],'pitcher':name(a['pitcher']),'season':'Fall 2026','date':None,'no':a['pitch'],'eligible':a['eligible']})
+audit_by_key={(a.get('kind','type'),a['uid']):a for a in audit}
+for e in review_events:
+ k=(e['kind'],e['uid']);previous=audit_by_key.get(k)
+ if previous and previous['applied'] and not e['applied']:
+  previous['followup']=e['reason'];continue
+ if previous:e={**e,'previousReview':previous}
+ audit_by_key[k]=e
+audit=list(audit_by_key.values())
 dump('audit.json',audit)
+dump('review-summary.json',review_summary)
 teamPositionSummary=[]
 for (season,pos),xy in team_positions.items():
  a=np.array(xy);teamPositionSummary.append({'season':season,'pos':pos,'n':len(a),'x':float(np.median(a[:,0])),'y':float(np.median(a[:,1])),'depth':float(np.median(np.linalg.norm(a,axis=1)))})
 dump('defense.json',{'lines':D,'throws':T,'positions':positionSummary,'teamPositions':teamPositionSummary})
 index={'title':'Centre Atlas','version':'1.0.0','built':datetime.date.today().isoformat(),'cutoff':'2026-10-24','seasons':seasons,'summary':summary,'players':players,'profiles':profiles,'games':games,'totals':{'pitches':sum(map(len,P.values())),'trackedSessions':160,'pbpGames':138,'registeredSessions':len(games),'trackedPA':sum(map(len,A.values())),'pbpCentrePA':sum(map(len,B.values())),'historicalChanges':len(corrections),'historicalFlags':len(flags)-len(corrections),'fallChanges':sum(a['original']!=a['clean'] and a['eligible'] for a in fall['audit'])},'manifest':manifest,'berryRepairs':dict(repairs),'aliases':[{'source':'Vallone, Tristen','canonical':'Vallone, Tristan','basis':'Coach-confirmed alias in existing cleaner; same recorded player ID.'},{'source':'Taylor, Wesley','canonical':'Taylor, Wes','basis':'Documented same-player mapping in draft source; numeric IDs differ.'}]}
+index['version']='1.2.0';index['pitchReview']={k:v for k,v in review_summary.items() if k!='cases'}
+index['totals']['identityChanges']=len(identity_changes)
+index['totals']['historicalFlags']=sum(a.get('kind','type')=='type' and a['season']!='Fall 2026' and not a['applied'] for a in audit)
 dump('index.json',index)
 assert index['totals']['pitches']==40123
 assert len({r['u'] for rows in P.values() for r in rows})==40123
