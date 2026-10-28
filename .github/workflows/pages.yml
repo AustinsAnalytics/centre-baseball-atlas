@@ -39,7 +39,10 @@ jobs:
           node --check site/studio-metrics.js
           node --check site/studio.js
           node --check site/query.js
+          node --check site/release.js
           node --test tests/*.test.mjs
+      - name: Stamp site publication time
+        run: python3 pipeline/stamp_release.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

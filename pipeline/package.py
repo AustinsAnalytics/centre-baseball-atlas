@@ -1,6 +1,8 @@
 """Make deterministic repository data archives and a portable website ZIP."""
 from pathlib import Path
 import gzip,json,zipfile,hashlib
+from stamp_release import stamp
+stamp()
 root=Path(__file__).resolve().parents[1]
 for p in (root/'site/data').glob('*.json'):
  p.with_suffix('.json.gz').write_bytes(gzip.compress(p.read_bytes(),compresslevel=9,mtime=0))

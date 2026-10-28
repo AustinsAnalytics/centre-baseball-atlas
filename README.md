@@ -4,7 +4,7 @@ Seven seasons of Centre baseball, connected. [Open the app](https://austinsanaly
 
 A static, searchable field guide built from the supplied ColonelsProject baseball archive and the reviewed Fall 2026 Studio release. It covers 40,123 unique eligible pitches, 160 tracked sessions, 138 spring PBP games (44 without tracking), and 5,354 supported ball-flight reconstructions through October 24, 2026.
 
-- Warm ivory / forest / gold palette and persistent top-right dark mode.
+- Warm ivory / forest / gold palette, persistent top-right dark mode, and the latest site update date/time in Eastern time.
 - Player notebooks with season histories and session logs; side-by-side comparisons.
 - Headshots across player notebooks, cards, search, comparisons and leaderboards, with source credits and individual head-and-shoulder framing. See [photo sources and maintenance](docs/PHOTOS.md).
 - Pitch lab with selectable measurement axes, location maps, arsenal details and pitch inspection.
@@ -37,7 +37,7 @@ Open `http://127.0.0.1:4390/`. GitHub Actions performs these data checks and pub
 
 Full-game PBP and tracked plate appearances are separate pools. The app never appends both versions of a matched PA. Spring-game outcomes default to full PBP; practice/scrimmage outcomes remain tracked and identifiable. Metrics are derived from numerator/denominator counts. EV, location and landings use explicit confidence gates. Original records are never overwritten.
 
-All 1,521 eligible Fall 2026 pitches retain the final Studio decisions, including 82 tag corrections, reviewed exclusions and the confirmed Graham Johnson single. The [seven-season identity and type audit](docs/PITCH_AUDIT.md) reassigns 801 pitches to named pitchers (606 official-supported; 195 inferred), marks 15 more unidentified, and adds 321 type decisions. Historical type changes now total 348; retained candidates remain inspectable. These are analytical judgments, not verified pitch intent. Source-normalized type labels remain selectable; reviewed pitcher attribution stays active. Every source record has a screening disposition and the original exports remain unchanged.
+All 1,521 eligible Fall 2026 pitches retain the final Studio decisions, including 82 tag corrections, reviewed exclusions and the confirmed Graham Johnson single. The [seven-season identity and type audit](docs/PITCH_AUDIT.md) reassigns 816 pitches to named pitchers (606 official-supported; 195 inferred; 15 user-confirmed) and adds 322 type decisions. Historical type changes now total 349; retained candidates remain inspectable. These are analytical judgments, not verified pitch intent. Source-normalized type labels remain selectable; reviewed pitcher attribution stays active. Every source record has a screening disposition and the original exports remain unchanged.
 
 Historical replay outcomes follow reconciled PA scoring where available, with original operator results preserved in the inspector. Fielder positions are observations at release, including unnamed position slots; they are not movement routes. An inferred airborne catch has no assigned catch time, point or catching fielder. Fielding credits are reconstructed PBP and retain known residual discrepancies.
 

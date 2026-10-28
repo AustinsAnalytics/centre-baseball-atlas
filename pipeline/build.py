@@ -2,6 +2,7 @@
 """Build static Centre Atlas data from reviewed sources. Original exports stay untouched."""
 from pathlib import Path
 import argparse,json,math,hashlib,collections,datetime,sys
+from zoneinfo import ZoneInfo
 import pandas as pd
 import numpy as np
 from replay_data import make_replay
@@ -200,8 +201,8 @@ teamPositionSummary=[]
 for (season,pos),xy in team_positions.items():
  a=np.array(xy);teamPositionSummary.append({'season':season,'pos':pos,'n':len(a),'x':float(np.median(a[:,0])),'y':float(np.median(a[:,1])),'depth':float(np.median(np.linalg.norm(a,axis=1)))})
 dump('defense.json',{'lines':D,'throws':T,'positions':positionSummary,'teamPositions':teamPositionSummary})
-index={'title':'Centre Atlas','version':'1.0.0','built':datetime.date.today().isoformat(),'cutoff':'2026-10-24','seasons':seasons,'summary':summary,'players':players,'profiles':profiles,'games':games,'totals':{'pitches':sum(map(len,P.values())),'trackedSessions':160,'pbpGames':138,'registeredSessions':len(games),'trackedPA':sum(map(len,A.values())),'pbpCentrePA':sum(map(len,B.values())),'historicalChanges':len(corrections),'historicalFlags':len(flags)-len(corrections),'fallChanges':sum(a['original']!=a['clean'] and a['eligible'] for a in fall['audit'])},'manifest':manifest,'berryRepairs':dict(repairs),'aliases':[{'source':'Vallone, Tristen','canonical':'Vallone, Tristan','basis':'Coach-confirmed alias in existing cleaner; same recorded player ID.'},{'source':'Taylor, Wesley','canonical':'Taylor, Wes','basis':'Documented same-player mapping in draft source; numeric IDs differ.'}]}
-index['version']='1.2.0';index['pitchReview']={k:v for k,v in review_summary.items() if k!='cases'}
+index={'title':'Centre Atlas','version':'1.0.0','built':datetime.datetime.now(ZoneInfo('America/New_York')).date().isoformat(),'cutoff':'2026-10-24','seasons':seasons,'summary':summary,'players':players,'profiles':profiles,'games':games,'totals':{'pitches':sum(map(len,P.values())),'trackedSessions':160,'pbpGames':138,'registeredSessions':len(games),'trackedPA':sum(map(len,A.values())),'pbpCentrePA':sum(map(len,B.values())),'historicalChanges':len(corrections),'historicalFlags':len(flags)-len(corrections),'fallChanges':sum(a['original']!=a['clean'] and a['eligible'] for a in fall['audit'])},'manifest':manifest,'berryRepairs':dict(repairs),'aliases':[{'source':'Vallone, Tristen','canonical':'Vallone, Tristan','basis':'Coach-confirmed alias in existing cleaner; same recorded player ID.'},{'source':'Taylor, Wesley','canonical':'Taylor, Wes','basis':'Documented same-player mapping in draft source; numeric IDs differ.'}]}
+index['version']='1.2.1';index['pitchReview']={k:v for k,v in review_summary.items() if k!='cases'}
 index['totals']['identityChanges']=len(identity_changes)
 index['totals']['historicalFlags']=sum(a.get('kind','type')=='type' and a['season']!='Fall 2026' and not a['applied'] for a in audit)
 dump('index.json',index)

@@ -61,9 +61,10 @@ for game,old,lo,hi,to,reason in practice:
  else:
   assert len(q), (game,old,lo)
   decide(q,to,'strong-inference',reason,f'practice-{game[:8]}-{lo}')
-# This outing is clearly different, but the candidate identity is not established.
-q=x[x.GameUID.eq('dd2b062d-86f8-40ae-950a-2dd1202047da')&x.Pitcher.eq('Cowdrey, Harrison')&x.Inning.eq(2)]
-decide(q,'Unidentified pitcher · Sep 22 2024','unresolved-identity','Abrupt full-inning shift in velocity, spin, movement and release relative to Cowdrey inning 1. No sufficiently distinctive matching pitcher established. Remove from Cowdrey personal totals while retaining team/contact records; coach chart needed.','unresolved-cowdrey-20240922')
+# User confirmed the previously unidentified outing belongs to Isaac Rone.
+q=x[x.GameUID.eq('dd2b062d-86f8-40ae-950a-2dd1202047da')&x.Pitcher.eq('Cowdrey, Harrison')&x.PitchNo.between(32,46)]
+assert len(q)==15 and q.Inning.eq(2).all() and q.Half.eq('top').all()
+decide(q,'Rone, Isaac','user-confirmed','User explicitly confirmed on October 27, 2026 that all 15 previously unidentified pitches (#32–46, top of inning 2) were Isaac Rone. Confirmation followed review of his nearby outings and the September 22 recording. Original Cowdrey tag is preserved.','confirmed-rone-20240922','User confirmation in project conversation, 2026-10-27')
 # Every other screened identity candidate stays visible, without forced reassignment.
 for file in ['identity_pitch_candidates.csv','identity_block_candidates.csv']:
  q=pd.read_csv(OUT/file)

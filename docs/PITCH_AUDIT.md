@@ -4,9 +4,9 @@ Reviewed October 27, 2026. Scope: all 40,126 source records across seven seasons
 
 ## Results
 
-- **801 pitches reassigned to a named pitcher:** 606 supported by official appearance/substitution records plus pitch context; 195 inferred from release, movement, velocity and recording continuity.
-- **15 additional pitches removed from Cowdrey and marked unidentified:** September 22, 2024, top of inning 2. Team and contact records remain available. No named substitute is asserted.
-- **321 additional pitch-type decisions**, after identity correction. These supplement the prior 27 historical and 82 eligible Fall 2026 type changes. Analytical labels describe likely families, not independently verified grip or intent.
+- **816 pitches reassigned to a named pitcher:** 606 supported by official appearance/substitution records plus pitch context; 195 inferred from release, movement, velocity and recording continuity; 15 explicitly confirmed by the user.
+- **15 formerly unidentified pitches are now credited to Isaac Rone:** September 22, 2024, top of inning 2, pitches #32–46. The user explicitly confirmed the identity on October 27, 2026. Pitch #38 is also reviewed from Slider to Changeup using Rone’s reference profile; the outing contains nine fastballs, four curveballs and two changeups.
+- **322 additional pitch-type decisions**, after identity correction. These supplement the prior 27 historical and 82 eligible Fall 2026 type changes. Analytical labels describe likely families, not independently verified grip or intent.
 - **Cowdrey: zero remaining Slider labels; three Unclassified pitches.** 110 pitches previously attributed to him were removed. One pitch previously tagged Carr was restored to Cowdrey after a separate boundary review.
 - All existing eligible pitches, batting outcomes, contact/location measurements and replays remain. Player IDs and headshot links are stable.
 
@@ -20,7 +20,7 @@ The prior Atlas view contained 150 Slider labels under Cowdrey (including one ea
 | February 1, 2025, innings 5–6 | 43 pitches → Aidan Christmas | Low release around 4.7 ft, wide release side, running fastball and sweeping breaker match Christmas references. Strong inference. |
 | March 28, 2026 at Millsaps, inning 4 | 11 pitches → Tommy Severson | Official substitution plus lower release and lower-velocity shape continuing into named Severson pitches. |
 | April 18, 2025 vs Sewanee, pitch 194 | 1 pitch → Zach Heavern | Official substitution and first-pitch continuity. |
-| September 22, 2024, inning 2 | 15 pitches → Unidentified | Entire outing differs from Cowdrey; candidate identity remains unconfirmed. |
+| September 22, 2024, inning 2 | 15 pitches → Isaac Rone | Explicit user confirmation after comparison of nearby outings; original Cowdrey attribution preserved. |
 | October 12, 2025, pitch 28 | 1 pitch from Carr → Cowdrey | Early name change; same fastball shape and uninterrupted timing as Cowdrey preceding pitches. |
 
 ## Coverage by season
@@ -28,7 +28,7 @@ The prior Atlas view contained 150 Slider labels under Cowdrey (including one ea
 | Season | Source records | Eligible | Identity decisions applied | Additional type decisions |
 |---|---:|---:|---:|---:|
 | Spring 2026 | 11498 | 11498 | 228 | 43 |
-| Fall 2024 | 3732 | 3732 | 45 | 37 |
+| Fall 2024 | 3732 | 3732 | 45 | 38 |
 | Spring 2025 | 9025 | 9025 | 265 | 66 |
 | Spring 2024 | 9329 | 9329 | 237 | 94 |
 | Fall 2023 | 2012 | 2012 | 39 | 71 |
@@ -48,23 +48,22 @@ The prior Atlas view contained 150 Slider labels under Cowdrey (including one ea
 
 ## Important unresolved evidence
 
-- September 22, 2024: 15 pitches clearly form a different Cowdrey-tagged outing, but the replacement pitcher is not reliably established. A coach pitching chart or video can resolve it.
 - February 21, 2026 vs Trine: ten pitches tagged Reid Courtwright have a left-handed release; the official feed continues Brody Bond with a right-handed profile. TrackMan identity is retained with a source-conflict flag, rather than forcing Bond.
 - March 21, 2026 at Rhodes: the official feed omits John Kosobud although the recorded late outing has his distinct release/arsenal. The 13 matched conflicts are retained and flagged; three additional unaligned pitches stay under their original Kosobud identity.
 - Cowdrey unclassified: May 4, 2024 pitch 189 lacks usable tracking; February 28, 2025 pitch 196 has low-quality/incomplete tracking; October 4, 2025 pitch 53 overlaps plausible families. None is forced into a named type.
 - Same-family naming (especially slider/curve and fastball/sinker), measurement outliers, missing video and incomplete practice charts limit certainty. A screen cannot establish every grip, intent or player identity. Retained candidates remain available for coach review.
 
-### September 22 official-site follow-up
+### September 22 confirmation and follow-up
 
 Centre’s [2024 schedule](https://centrecolonels.com/sports/baseball/schedule/2024), [2025 schedule](https://centrecolonels.com/sports/baseball/schedule/2025), [2024 baseball news archive](https://centrecolonels.com/sports/baseball/archives?season=2024&path=baseball) and all-season searches for “intrasquad” and “fall” did not yield a game report or play-by-play for the September 22, 2024 intrasquad. This is a search limitation, not proof that no private chart exists.
 
-An additional comparison of fastball and curveball measurements against individual Centre outings favors **Isaac Rone’s September 29, 2024 outing** as an exploratory lead. Rone’s low-spin fastball is closer; some Zach Heavern references overlap the curveball and release profile. The combined standardized distances (0.625 for that Rone outing and 0.729 for Heavern’s February 10, 2024 outing) are close and are **not probabilities**. No named attribution was applied. `pipeline/investigate_unidentified.py` preserves the comparison; a contemporaneous pitching chart or video is still needed to resolve it.
+An additional comparison of fastball and curveball measurements against individual Centre outings favors **Isaac Rone’s September 29, 2024 outing** as an exploratory lead. Rone’s low-spin fastball is closer; some Zach Heavern references overlap the curveball and release profile. The combined standardized distances (0.625 for that Rone outing and 0.729 for Heavern’s February 10, 2024 outing) are close and are **not probabilities**. The initial review left the outing unidentified. **The user subsequently confirmed all 15 pitches as Rone, and that confirmation now determines the attribution.** `pipeline/investigate_unidentified.py` preserves the earlier comparison, which is not treated as independent proof of identity. The all-season type screen was rerun with Rone’s corrected profile; pitch #38 now meets the changeup threshold. November 2 pitch #140 remains a Slider after direct release/movement review, despite a small change to the season-wide threshold score.
 
 ## Source-name resolution
 
 Spelling/abbreviation matches were separated from pitcher substitutions: Sheperd/Shepherd, Hatrick/Hartrick, JD Van Hook/J. Hook, Jake Hartman/J. jr, John Parker Rambo and Drew/Andrew Harbison. Existing canonical IDs are preserved. Dominican's Grayson Downing and Austin Doty entries were different stale identities; the March 1, 2026 box and official roster identify Langdon Downing and Austin Long. New names that lack a verified full-name match retain the official abbreviation.
 
-Primary sources include [Centre official game records](https://centrecolonels.com/sports/baseball/stats), [Dominican 2026 pitching statistics](https://dustars.com/sports/baseball/stats/2026), [Langdon Downing](https://dustars.com/sports/baseball/roster/langdon-downing/4955), [Jake Thometz's DePauw roster](https://depauwtigers.com/sports/baseball/roster/2024), and [Andrew Harbison's Spalding bio](https://spaldingathletics.com/sports/baseball/roster/andrew-harbison/3666). Every official-supported identity decision links to its specific game.
+Primary sources include [Centre official game records](https://centrecolonels.com/sports/baseball/stats), [Dominican 2026 pitching statistics](https://dustars.com/sports/baseball/stats/2026), [Langdon Downing](https://dustars.com/sports/baseball/roster/langdon-downing/4955), [Jake Thometz's DePauw roster](https://depauwtigers.com/sports/baseball/roster/2024), and [Andrew Harbison's Spalding bio](https://spaldingathletics.com/sports/baseball/roster/andrew-harbison/3666). Every official-supported identity decision links to its specific game. The follow-up also resolves B. Hoover’s missing handedness as Right using [Ben Hoover’s official 2024 Birmingham-Southern bio](https://bscsports.net/sports/baseball/roster/ben-hoover/7453); the published player ID remains stable.
 
 ## Files and reproduction
 

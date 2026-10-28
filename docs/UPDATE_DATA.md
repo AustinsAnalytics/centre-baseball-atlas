@@ -22,3 +22,5 @@
 For an entirely new season, extend the season registry, source ingestion and tests deliberately; the existing seven-season list is explicit. No background upload or cloud service automatically reads your computer.
 
 To add or replace a headshot without changing statistics, follow [PHOTOS.md](PHOTOS.md). Photo identity mappings and framing are maintained separately from the analytics pipeline.
+
+The top-right timestamp comes from `site/release.json`. Packaging stamps local builds; GitHub Actions refreshes it immediately before uploading the site. It displays Eastern time (EDT/EST), independent of the visitor’s timezone. It describes the site release, not the date of the newest baseball recording.

@@ -28,6 +28,12 @@ for uid,r in list(by.items()):
   r['pitcher']=who
   if r['applied']:
    x.loc[x.PitchUID.eq(uid),'FinalType']=x.loc[x.PitchUID.eq(uid),'AtlasType'];r['applied']=False;r['status']='retained-after-identity-review';r['reason']='Identity boundary changed during final review; type retained pending reference review.'
+# Keep the supported November 2 slider decision after the newly confirmed slower
+# September fastballs move Rone's season-wide fastball reference slightly.
+uid='616b7050-994c-11ef-bb74-e1166b457716'
+z=x[x.PitchUID.eq(uid)];assert len(z)==1 and z.FinalPitcher.iloc[0]=='Rone, Isaac'
+r=z.iloc[0];x.loc[z.index,'FinalType']='Slider'
+by[uid]={**by[uid],'candidate':'Slider','applied':True,'status':'manual-shape-review','reason':'Rechecked after the user-confirmed September outing changed the season reference. This November 2 pitch is 81.0 mph with +4.6 inch IVB, -2.1 inch HB and 2065 rpm, released at 5.50 ft. Same-outing fastballs are about 86.3 mph with +15 inch arm-side run and 5.90 ft release; adjacent sliders share its glove-side movement and lower slot. Preserve the earlier supported Slider inference; a marginal model threshold change is not new evidence of fastball intent.'}
 pd.DataFrame(by.values()).to_csv(OUT/'type_decisions_final.csv',index=False)
 x.to_pickle(OUT/'final_audit_frame.pkl')
 print('New applied type decisions',sum(bool(r['applied']) for r in by.values()))
